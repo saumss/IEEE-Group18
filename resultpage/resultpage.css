@@ -1,0 +1,489 @@
+.result-page {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    box-shadow: 5px 5px 10px 0px #d4d4d4;
+    align-items: center;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .report-container {
+    top: 139px;
+    left: 164px;
+    width: 1110px;
+    height: 432px;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    border-color: #0c49ec;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .report-summary {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 44px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-color: #023bf7;
+    border-style: solid;
+    border-width: 2px;
+    border-top-right-radius: 8px;
+    background-color: #023bf7;
+  }
+  .report-summary-text {
+    top: 5px;
+    left: 16px;
+    color: rgb(255, 255, 255);
+    width: 213px;
+    height: 20px;
+    margin: auto;
+    position: absolute;
+    font-size: 24px;
+    font-style: normal;
+    font-family: Montserrat;
+    font-weight: 600;
+  }
+  .container3 {
+    top: 122px;
+    left: 42px;
+    width: 1031px;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    background-color: #E6E6E6;
+  }
+  .text007 {
+    top: 11px;
+    left: 23px;
+    margin: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: normal;
+    font-family: Montserrat;
+    font-weight: 500;
+  }
+  .text008 {
+    top: 11px;
+    left: 640px;
+    position: absolute;
+    font-size: 14px;
+    font-family: Montserrat;
+  }
+  .text009 {
+    top: 58px;
+    left: 22px;
+    width: 815.90px;
+    height: 40px;
+    position: absolute;
+    font-size: 14px;
+    font-family: Montserrat;
+  }
+  .container4 {
+    top: 202px;
+    left: 41px;
+    width: 1031px;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    background-color: #E6E6E6;
+  }
+  .text013 {
+    top: 11px;
+    left: 23px;
+    margin: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: normal;
+    font-family: Montserrat;
+    font-weight: 500;
+  }
+  .text014 {
+    top: 11px;
+    left: 640px;
+    position: absolute;
+    font-size: 14px;
+    font-family: Montserrat;
+  }
+  .link {
+    top: 11px;
+    right: 152px;
+    position: absolute;
+    font-size: 14px;
+    font-family: Montserrat;
+  }
+  .container5 {
+    top: 284px;
+    left: 43px;
+    width: 1031px;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    align-items: flex-start;
+    background-color: #E6E6E6;
+  }
+  .text015 {
+    top: 8px;
+    left: 20px;
+    margin: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: normal;
+    font-family: Montserrat;
+    font-weight: 500;
+  }
+  .text031 {
+    top: 11px;
+    left: 640px;
+    position: absolute;
+    font-size: 14px;
+    font-family: Montserrat;
+  }
+  .text032 {
+    top: 11px;
+    left: 23px;
+    margin: auto;
+    position: absolute;
+    font-size: 14px;
+    font-style: normal;
+    font-family: Montserrat;
+    font-weight: 500;
+  }
+  .text033 {
+    top: 11px;
+    left: 640px;
+    position: absolute;
+    font-size: 14px;
+    font-family: Montserrat;
+  }
+  .link1 {
+    top: 11px;
+    right: 152px;
+    position: absolute;
+    font-size: 14px;
+    font-family: Montserrat;
+  }
+  .container6 {
+    top: 673px;
+    flex: 0 0 auto;
+    left: 385px;
+    width: 640px;
+    height: 332px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    justify-content: flex-start;
+  }
+  .image {
+    top: 97px;
+    left: 23px;
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    object-fit: cover;
+  }
+  .text044 {
+    right: 4px;
+    width: 429px;
+    bottom: -5px;
+    position: absolute;
+  }
+  .text045 {
+    font-style: normal;
+    font-weight: 500;
+  }
+  .container7 {
+    top: 673px;
+    flex: 0 0 auto;
+    left: 385px;
+    width: 640px;
+    height: 332px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    border-color: var(--dl-color-gray-black);
+    border-width: 1px;
+    justify-content: flex-start;
+  }
+  .image1 {
+    top: 97px;
+    left: 23px;
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    object-fit: cover;
+  }
+  .text075 {
+    right: 4px;
+    width: 429px;
+    bottom: -5px;
+    position: absolute;
+  }
+  .text076 {
+    font-style: normal;
+    font-weight: 500;
+  }
+  .image2 {
+    width: 100px;
+    object-fit: cover;
+  }
+  @media(max-width: 1600px) {
+    .text001 {
+      left: 63px;
+      bottom: 58px;
+      position: absolute;
+      font-size: 14px;
+      font-style: normal;
+      font-family: Montserrat;
+      font-weight: 500;
+    }
+    .text006 {
+      top: 298px;
+      left: 674px;
+      position: absolute;
+    }
+    .container3 {
+      top: 120px;
+      left: 44px;
+    }
+    .text007 {
+      font-size: 14px;
+      font-style: normal;
+      font-family: Montserrat;
+      font-weight: 500;
+    }
+    .text008 {
+      top: 11px;
+      left: 638px;
+    }
+    .text014 {
+      top: 11px;
+      left: 638px;
+    }
+    .text015 {
+      left: 19px;
+      bottom: -10px;
+      font-size: 14px;
+      font-style: normal;
+      font-family: Montserrat;
+      font-weight: 500;
+    }
+    .text020 {
+      top: 7px;
+      left: 635px;
+      color: rgb(243, 233, 233);
+      width: 61.55px;
+      height: 26px;
+      position: absolute;
+      text-align: center;
+      padding-top: 7px;
+      border-radius: 8px;
+      background-color: rgb(0, 102, 255);
+    }
+    .text021 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text025 {
+      left: 713px;
+      bottom: 10px;
+      color: rgb(10, 10, 10);
+      width: 61.55px;
+      height: 26px;
+      position: absolute;
+      text-align: center;
+      padding-top: 7px;
+      border-color: #023bf7;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 8px;
+      background-color: rgb(233, 237, 243);
+    }
+    .text026 {
+      color: var(--dl-color-gray-black);
+    }
+    .text030 {
+      top: 170px;
+      left: 68px;
+      position: absolute;
+      font-size: 14px;
+      font-style: normal;
+      text-align: justify;
+      font-family: Montserrat;
+      font-weight: 500;
+    }
+    .text031 {
+      top: 171px;
+      left: 680px;
+      font-size: 14px;
+      text-align: justify;
+      font-family: Montserrat;
+    }
+    .text032 {
+      top: 253px;
+      left: 65px;
+      font-size: 14px;
+      font-style: normal;
+      font-family: Montserrat;
+      font-weight: 500;
+    }
+    .text033 {
+      top: 253px;
+      left: 678px;
+      font-size: 14px;
+      font-family: Montserrat;
+    }
+    .link1 {
+      top: 253px;
+      left: 755px;
+      font-size: 14px;
+      font-family: Montserrat;
+    }
+    .text034 {
+      left: 677px;
+      color: rgb(243, 233, 233);
+      width: 61.55px;
+      bottom: 60px;
+      height: 26px;
+      position: absolute;
+      text-align: center;
+      padding-top: 7px;
+      border-radius: 8px;
+      background-color: rgb(0, 102, 255);
+    }
+    .text035 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text039 {
+      left: 757px;
+      color: rgb(10, 10, 10);
+      width: 61.55px;
+      bottom: 60px;
+      height: 26px;
+      position: absolute;
+      text-align: center;
+      padding-top: 7px;
+      border-color: #023bf7;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 8px;
+      background-color: rgb(233, 237, 243);
+    }
+    .text040 {
+      color: var(--dl-color-gray-black);
+    }
+    .container6 {
+      top: 729px;
+      left: 385px;
+      border-color: #ffffff;
+    }
+    .text044 {
+      top: 0px;
+      right: 4px;
+      font-family: Montserrat;
+    }
+    .text045 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text049 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text053 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text057 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text061 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text065 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text069 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text073 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .container7 {
+      top: 1308px;
+      left: 385px;
+      border-color: #ffffff;
+    }
+    .text075 {
+      right: 3px;
+      bottom: 0px;
+    }
+    .text076 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text080 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text084 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text088 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text092 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text096 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text100 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .text104 {
+      font-style: normal;
+      font-weight: 500;
+    }
+    .image2 {
+      top: 1129px;
+      left: 673px;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+    }
+    .text106 {
+      top: 581px;
+      left: 165px;
+      right: 166px;
+      width: 1108px;
+      position: absolute;
+      font-family: Montserrat;
+    }
+  }
+  
