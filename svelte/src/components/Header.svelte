@@ -3,7 +3,7 @@
 
 <main>
     <div class="headerbox">
-        <h1 class="heading">SSL <span class="linear-grad-blue">Checker</span></h1>
+        <h1 class="heading">SSL <span class="linear-grad-blue">Shoper</span></h1>
         <div class="container"> 
         <a href="www.xyz.com" class="link"><span class="menu-item ">SSL Wizard</span></a>
         <a href="www.xyz.com" class="link"><span class="menu-item ">Cheap SSL Certificates</span></a>
@@ -67,7 +67,6 @@
         font-style: normal;
         font-size: 0.9rem;
         margin: 0 2rem;
-        font-size: 14px;
         text-decoration: none;
         color: #1a1a1a;
         transition: transform 0.1s ease-out;
