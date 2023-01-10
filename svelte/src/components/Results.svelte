@@ -1,6 +1,8 @@
 
 <script>
-
+    export let name='www.xyz.com'
+    export let issuer='sujal bhaiya'
+    export let expire='22'
 </script>
 
 <main>
@@ -45,10 +47,10 @@
 
                 <div class="rpt-sum-cont" id="rsc-1">
                     <div class="rsc-q">
-                        <p class="rsc-q-txt">Website Address</p>
+                        <p class="rsc-q-txt">website name</p>
                     </div>
                     <div class="rsc-a">
-                        <p>www.linkedin.com</p>
+                        <p>{name}</p>
                     </div>
                 </div>
                 <div class="rpt-sum-cont" id="rsc-2">
@@ -64,7 +66,7 @@
                         <p class="rsc-q-txt">Certificate issued by</p>
                     </div>
                     <div class="rsc-a">
-                        <p>DigiCert</p>
+                        <p>{issuer}</p>
                     </div>
                 </div>
                 <div class="rpt-sum-cont" id="rsc-4">
@@ -72,7 +74,7 @@
                         <p class="rsc-q-txt">Certificate expires in</p>
                     </div>
                     <div class="rsc-a">
-                        <p>45 Days</p>
+                        <p>{expire}</p>
                     </div>
                 </div>
                 <div class="rpt-sum-cont" id="rsc-5">

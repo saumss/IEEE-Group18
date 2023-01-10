@@ -7,7 +7,7 @@
 <main id="main-page">
   <Header/>
   <SearchBox/>
-  <Results/>
+  <!-- <Results/> -->
 
 
 </main>

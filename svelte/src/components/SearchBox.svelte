@@ -1,6 +1,35 @@
 <script>
-</script>
+  import { onMount } from "svelte";
+  import Results from "./Results.svelte";
+  let val = ''
+  let data='hi'
+  let abc = 'bye'
+  let name = 'www.example.com'
+  let issuer = 'NO'
+  let expire ='25'
+  async function submitForm()  {
+        const response = await fetch(
+          `https://ssl-certificate-checker2.p.rapidapi.com/ssl-certificate-checker/check?host=${val}`,
+            {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-host': 'ssl-certificate-checker2.p.rapidapi.com',
+                    'x-rapidapi-key': 'e2ca7523a4mshcfa7bab7f8a51ddp140304jsnaaeadd5ac973',
+                },
+            }
+        );
+         data = await response.json();
+        val = ''
+        console.log(data);
+        name = data.subject.CN
+        issuer = data.issuer.CN
+        expire = data.expiresInDays
+        // console.log(data.subject)
+        // abc = data.subject.CN
+    };
+// }
 
+</script>
 <main id="main-page">
     <div class="container">
       <div class="search-box">
@@ -21,16 +50,20 @@
   
         <div class="input-box">
           <div class="server-name-div">Server Hostname</div>
+          <form on:submit|preventDefault={submitForm}>
             <div class="flex input-container">
               <div class="input-div inline-block">
-                <span class="input-span">http://</span><input type="text" class="input-url" name="input-url" placeholder="www.example.com"/>
+                <span class="input-span">http://</span>
+                   <input type="text"  class="input-url" name="input-url" bind:value = {val} placeholder="www.example.com">
               </div>
-              <div class="inline-block"><button class="btn-primary">Check SSL</button></div>
+              <div class="inline-block"><button class="btn-primary" type="submit">Check SSL</button></div>
             </div>
+          </form>
             <span class="input-hint-span">Enter URL of website</span>
         </div>
       </div>
     </div>
+    <Results {name} {issuer} {expire}/>
   </main>
   
   <style>
