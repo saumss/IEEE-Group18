@@ -1,32 +1,24 @@
 
 <script>
-
+    export let companyName = "linkedIn.com";
+    export let issuerDetails = {
+        'issuer' : "DigiCert",
+        'location': "london"
+    };
+    // export let success = false;
+    export let serverType = "gws";
+    export let daysRemaining = '30';
+    export let validFrom = "";
+    export let validTo = "";
+    export let valid = false;
+    export let serialNumber = '39399w09w0s030920';
+    // success = valid;
 </script>
 
 <main>
 
-    <div class="nav-bar">
-        <div class="nav-bar-left">
-            SSL Shoper
-        </div>
-
-        <div class="nav-bar-right">
-            <div class="nav-bar-rt-links">
-                <a class="links" id="ssl-wzrd" href="home">SSL Wizard</a>
-            </div>
-            <div class="nav-bar-rt-links">
-                <a class="links" href="home">Cheap SSL Certificates</a>
-            </div>
-            <div class="nav-bar-rt-links">
-                <a class="links" href="home">Wild Card Certificates</a>
-            </div>
-            <div class="nav-bar-rt-links">
-                <a class="links" id="ssl-tls" href="home">SSL Tools</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="report">
+    {#if valid}
+        <div class="report">
         <div class="rpt-summary">
 
             <div class="rpt-sum-header">
@@ -39,16 +31,12 @@
                 </p>
             </div>
             <div class="rpt-sum-contents">
-
-                
-
-
                 <div class="rpt-sum-cont" id="rsc-1">
                     <div class="rsc-q">
                         <p class="rsc-q-txt">Website Address</p>
                     </div>
                     <div class="rsc-a">
-                        <p>www.linkedin.com</p>
+                        <p>{companyName}</p>
                     </div>
                 </div>
                 <div class="rpt-sum-cont" id="rsc-2">
@@ -64,7 +52,7 @@
                         <p class="rsc-q-txt">Certificate issued by</p>
                     </div>
                     <div class="rsc-a">
-                        <p>DigiCert</p>
+                        <p>{issuerDetails.issuer}</p>
                     </div>
                 </div>
                 <div class="rpt-sum-cont" id="rsc-4">
@@ -72,7 +60,7 @@
                         <p class="rsc-q-txt">Certificate expires in</p>
                     </div>
                     <div class="rsc-a">
-                        <p>45 Days</p>
+                        <p>{daysRemaining} Days</p>
                     </div>
                 </div>
                 <div class="rpt-sum-cont" id="rsc-5">
@@ -80,8 +68,11 @@
                         <p class="rsc-q-txt">Host name is correctly listed in the certificate</p>
                     </div>
                     <div class="rsc-a">
-                        <button class="rsc-button" id="rscb1">Yes</button>
-                        <button class="rsc-button" id="rscb2">No</button>
+                        {#if valid == true}
+                        <button class="rsc-button" id="rscb1">Yes</button>                        
+                        {:else}
+                        <button class="rsc-button" id="rscb2">No</button>                        
+                        {/if}
                     </div>
                 </div>
 
@@ -91,19 +82,17 @@
         <div class="result-items">
             <div class="rslt-itm">
                 <img class="ri-im" src="https://www.sslshopper.com/assets/templates/sslshopper/images/sslchecker/certificate_good_server.png" alt="server">
-                <p class="ri">
-                    Common name: *.facebook.com <br>
-                    SANs: *.facebook.com, *.facebook.net, <br> *.fbcdn.net, *.fbsbx.com, *.m.facebook.com, <br> *.messenger.com, *.xx.fbcdn.net, *.xy.fbcdn.net, <br> *.xz.fbcdn.net, facebook.com, messenger.com <br>
-                    Organization: Facebook, Inc. <br>
-                    Location: Menlo Park, California, US <br>
-                    Valid from September 16, 2022 to December 16, 2022 <br>
-                    Serial Number: 0139f722797ee11cf3f7aa8a63ff713a <br>
-                    Signature Algorithm: sha256WithRSAEncryption <br>
-                    Issuer: DigiCert SHA2 High Assurance Server CA <br>
-                </p>
+                <div class="ri">
+                    <p>Common name: {companyName}</p> 
+                    <p>Location: {issuerDetails.location}</p>
+                    <p>Valid from {validFrom} to {validTo}</p> 
+                    <p>Serial Number: {serialNumber} </p>
+                    <p>Issuer: {issuerDetails.issuer} </p>
+                    <p>server Type: {serverType} </p>
+                </div>
             </div>
 
-            <div class="rslt-itm"><img class="ri-arr" src="https://www.sslshopper.com/assets/templates/sslshopper/images/sslchecker/arrow_down.png" alt="arrow"></div>
+            <!-- <div class="rslt-itm"><img class="ri-arr" src="https://www.sslshopper.com/assets/templates/sslshopper/images/sslchecker/arrow_down.png" alt="arrow"></div>
 
             <div class="rslt-itm">
                 <img class="ri-im" src="https://www.sslshopper.com/assets/templates/sslshopper/images/sslchecker/certificate_good_chain.png" alt="chain">
@@ -116,9 +105,10 @@
                     Signature Algorithm: sha256WithRSAEncryption <br>
                     Issuer: DigiCert High Assurance EV Root CA <br>
                 </p>
-            </div>
+            </div> -->
         </div>
     </div>
+    {/if}
 
 </main>
 
@@ -128,79 +118,16 @@
 
     main {
         padding: 0px;
-
         display: flex;
         flex-direction: column;
         align-items: center;
-
         background: #ffffff url("251846398462.png") repeat right top;
-        
-    }
-
-    .nav-bar {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-        width: 100%;
-        height: 80px;
-
-        padding: 0px 80px;
-
-        font-family: "montserrat", sans-serif;
-
-        box-shadow: 0px 2px 2px #0066ff;
-        background-color: #ffffff;
-
-    }
-
-    .nav-bar-left {
-        margin-left: 80px;
-
-        font-size: 32px;
-    }
-
-    .nav-bar-right {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        margin-right: 80px;
-
-    }
-
-    .nav-bar-rt-links {
-        margin: 0px 0px 0px 24px;
-    }
-
-    .links {
-        text-decoration: none;
-
-        color: #000000;
-        font-size: 16px;
-    }
-
-    #ssl-wzrd {
-        color: #0066ff;
-    }
-
-    #ssl-tls {
-        color: #0066ff;
-
-        border: 2px solid #0066ff;
-        border-radius: 8px;
-        padding: 6px;
     }
 
     .report {
         font-family: "montserrat", sans-serif;
-
         width: 800px;
-
         margin: 40px 0px;
-
-        
     }
 
     .rpt-summary {
@@ -309,11 +236,12 @@
     
     }
 
-    .ri-arr {
+    /* .ri-arr {
         transform: scale(0.8);
-        /* margin: 2rem 0 2rem 6rem; */
         text-align: center;
-    }
+    } */
+
+
 
     .ri {
         font-size: 14px;

@@ -4,7 +4,7 @@
 
 <main>
     <div class="headerbox">
-        <img src="\Assets\ssl-shopper-logo.svg" alt="image not found" class="ssl">
+        <img src="\Assets\ssl-shopper-logo.svg" alt="" class="ssl">
         <a href="www.xyz.com"><span class="wizard">SSL Wizard</span></a>
         <a href="www.xyz.com"><span class="certificates">Cheap SSL Certificates</span></a>
         <a href="www.xyz.com"><span class="cscertificates">Code Signing Certificates</span></a>

@@ -1,4 +1,61 @@
 <script>
+// @ts-nocheck
+    import Results from "./Results.svelte";
+
+        let hostname = '';
+        let companyName;
+        let SANs;
+        let issuerDetails;
+        let serverType;
+        let valid;
+        let daysRemaining;
+        let serialNumber;
+        let validFrom;
+        let validTo;
+
+        let success = false;
+        let response;
+  async function submitForm()  {
+        // if(hostname == ''){
+        //   let element = document.querySelector('.error-message')
+        //   element.classList.remove('display-none')
+        //   success = false;
+        // }
+        // if(hostname != ''){
+        //   let element = document.querySelector('.error-message')
+        //   element.classList.add('display-none')
+        // }
+        response = await fetch(`http://localhost:3000/?hostname=${hostname}`, {method: 'POST' })
+        .catch(error =>console.log(error))
+            console.log(response.status)
+            const data = await response.json();
+            const resData = await data;
+            console.log(resData);
+            companyName = data.companyName;
+              SANs = data.SANs;
+      
+        issuerDetails = data.issuerDetails;
+        serverType = data.serverType;     
+        daysRemaining = data.daysRemaining;
+        validFrom = data.validFrom;
+        validTo = data.validTo;
+        valid = data.valid;
+        success = valid;
+        console.log(success)
+        // if(success == false){
+        //   companyName ='';
+        //   SANs = '';
+        //   issuerDetails = '';
+        //   serverType = '';
+        //   valid = '';
+        //   daysRemaining = '';
+        //   serialNumber = '';
+        //   validFrom = '';
+        //   validTo = '';
+        // }
+        // serialNumber = data.serialNumber;
+    };
+
 </script>
 
 <main id="main-page">
@@ -21,17 +78,49 @@
   
         <div class="input-box">
           <div class="server-name-div">Server Hostname</div>
-            <div class="flex input-container">
-              <div class="input-div inline-block">
-                <span class="input-span">http://</span><input type="text" class="input-url" name="input-url" placeholder="www.example.com"/>
+            <form  on:submit|preventDefault={submitForm}>
+              <div class="flex input-container">
+                <div class="input-div inline-block">
+                  <span class="input-span">http://</span><input type="text" class="input-url" name="input-url" bind:value={hostname} placeholder="www.example.com"/>
+                </div>
+                <div class="inline-block"><button class="btn-primary" type="submit">Check SSL</button></div>
               </div>
-              <div class="inline-block"><button class="btn-primary">Check SSL</button></div>
-            </div>
+            </form>
             <span class="input-hint-span">Enter URL of website</span>
         </div>
       </div>
+      
     </div>
+    <!-- {#if success} -->
+      
+      <!-- {success} = false; -->
+    <!-- {/if} -->
+    
+    {#await response} 
+    
+    <div><h1>...waiting</h1></div> 
+    
+    {:then number} 
+    <Results {companyName} {issuerDetails} {daysRemaining} {serialNumber} {valid} {validFrom} {validTo}/>
+
+    {:catch error} <p style="color: red">
+      {error.message}</p> 
+      
+      {/await}
   </main>
+  <!-- "companyName": data.subject.commonName,
+                "SANs": data.subjectAlternativeName,
+                "issuerDetails": { 
+                                    "issuer": data.issuer.commonName, 
+                                    "organization": data.issuer.organization, 
+                                    "location": data.issuer.location
+                                },
+                "serverType": 'gws',        
+                "daysRemaining": data.daysRemaining,
+                "validFrom": data.validFrom,
+                "validTo": data.validTo,
+                "valid": data.valid,
+                "serialNumber": data.serialNumber -->
   
   <style>
     :root {
@@ -102,8 +191,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      widows: 100vw;
+      flex-direction: column;
     }
   
     /* Search box */
@@ -114,11 +202,12 @@
       border: 1px solid #0066ff;
       border-radius: 8px;
       /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.63);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.6px);
-    -webkit-backdrop-filter: blur(6.6px);
+      background: rgba(255, 255, 255, 0.63);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6.6px);
+      -webkit-backdrop-filter: blur(6.6px);
+      margin: 9rem 0 2rem 0;
     }
   
     .info-para, .more-info-link{
@@ -188,6 +277,8 @@
       font-size: 10px;
       margin-left: 1.3rem;
     }
-    
+
+    /* .display-none{
+      display: none;
+    } */
   </style>
-  
