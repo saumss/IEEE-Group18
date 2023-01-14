@@ -9,37 +9,37 @@ const port = 3000;
     
 
 app.get('/', (req, res)=>{
-   const query = req.query.hostname;
-    sslChecker.Info(`https://${query}`, {port: 443, method: "GET"}).then(data => {
-    const vd = (data.valid) ? true : false;
-        if(query){
-            res.send({
-                "companyName": data.subject.commonName,
-                "SANs": data.subjectAlternativeName,
-                "issuerDetails": { 
-                                    "issuer": data.issuer.commonName, 
-                                    "organization": data.issuer.organization, 
-                                    "location": data.issuer.location
-                                },
-                "serverType": 'gws',        
-                "daysRemaining": data.daysRemaining,
-                "validFrom": data.validFrom,
-                "validTo": data.validTo,
-                "valid":   vd,
-                "serialNumber": data.serialNumber
-            })
+//    const query = req.query.hostname;
+//     sslChecker.Info(`https://${query}`, {port: 443, method: "GET"}).then(data => {
+//     const vd = (data.valid) ? true : false;
+//         if(query){
+//             res.send({
+//                 "companyName": data.subject.commonName,
+//                 "SANs": data.subjectAlternativeName,
+//                 "issuerDetails": { 
+//                                     "issuer": data.issuer.commonName, 
+//                                     "organization": data.issuer.organization, 
+//                                     "location": data.issuer.location
+//                                 },
+//                 "serverType": 'gws',        
+//                 "daysRemaining": data.daysRemaining,
+//                 "validFrom": data.validFrom,
+//                 "validTo": data.validTo,
+//                 "valid":   vd,
+//                 "serialNumber": data.serialNumber
+//             })
             
-        }
-        else{
-            res.send('hostname not provided')
-        }
+//         }
+//         else{
+//             res.send('hostname not provided')
+//         }
         
     
-    }).catch(error => {
+//     }).catch(error => {
 
-    res.send(`invalid hostname or hostname not provided <br> here is what happened wrong : ${error}`);
+//     res.send(`invalid hostname or hostname not provided <br> here is what happened wrong : ${error}`);
     
-    });
+//     });
 })
 
 app.post('/', (req, res)=>{
@@ -59,12 +59,27 @@ app.post('/', (req, res)=>{
         "validFrom": data.validFrom,
         "validTo": data.validTo,
         "valid": data.valid,
-        "serialNumber": data.serialNumber
+        "serialNumber": data.serialNumber,
     });
     
     }).catch(error => {
 
-        res.send(`invalid hostname or hostname not provided or something went wrong : ${error}`);
+        // res.send(`invalid hostname or hostname not provided or something went wrong : ${error}`);
+        res.send({
+            "companyName": "NULL",
+            "SANs": "NULL",
+            "issuerDetails": { 
+                                "issuer": "NULL", 
+                                "organization": "NULL", 
+                                "location": "NULL"
+                            },
+            "serverType": 'gws',        
+            "daysRemaining": "NULL",
+            "validFrom": "NULL",
+            "validTo": "NULL",
+            "valid": "NULL",
+            "serialNumber": "NULL",
+        });
     
     });
 })

@@ -10,14 +10,14 @@
     export let daysRemaining = '30';
     export let validFrom = "";
     export let validTo = "";
-    export let valid = false;
+    export let valid = "";
     export let serialNumber = '39399w09w0s030920';
     // success = valid;
 </script>
 
 <main>
 
-    {#if valid}
+    {#if valid!="NULL"}
         <div class="report">
         <div class="rpt-summary">
 
@@ -108,6 +108,8 @@
             </div> -->
         </div>
     </div>
+    {:else}
+    <p>Wrong information provided</p>
     {/if}
 
 </main>
