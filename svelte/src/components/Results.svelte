@@ -5,8 +5,7 @@
         'issuer' : "DigiCert",
         'location': "london"
     };
-    // export let hostname = '';
-    export let serverType = "gws";
+   
     export let daysRemaining = '30';
     export let validFrom = "";
     export let validTo = "";
@@ -83,12 +82,11 @@
             <div class="rslt-itm">
                 <img class="ri-im" src="https://www.sslshopper.com/assets/templates/sslshopper/images/sslchecker/certificate_good_server.png" alt="server">
                 <div class="ri">
-                    <p>Common name: {companyName}</p> 
+                    <p>Company name: {companyName}</p> 
                     <p>Location: {issuerDetails.location}</p>
                     <p>Valid: from {validFrom} to {validTo}</p> 
                     <p>Serial Number: {serialNumber} </p>
                     <p>Issuer: {issuerDetails.issuer} </p>
-                    <p>server Type: {serverType} </p>
                 </div>
             </div>
 

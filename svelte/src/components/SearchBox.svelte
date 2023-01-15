@@ -14,6 +14,7 @@
 
         let success = false;
         let response;
+        
   async function submitForm()  {
         response = await fetch(`http://localhost:3000/?hostname=${hostname}`, {method: 'POST' })
         .catch(error =>console.log(error))
@@ -27,7 +28,8 @@
             validFrom = new Date(data.validFrom).toDateString().slice(4);
             validTo = new Date(data.validTo).toDateString().slice(4);
             valid = data.valid;
-            success = valid;    
+            success = valid;  
+            serialNumber = data.serialNumber;  
     };
 
 </script>

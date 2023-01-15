@@ -46,6 +46,7 @@ app.post('/', (req, res)=>{
     const query = req.query.hostname;
     sslChecker.Info(`https://${query}`, {port: 443, method: "GET"}).then(data => {
         console.log(data.issuerDetails);
+        console.log(data.valid)
     res.send({
         "companyName": data.subject.commonName,
         "SANs": data.subjectAlternativeName,
@@ -54,7 +55,7 @@ app.post('/', (req, res)=>{
                             "organization": data.issuer.organization, 
                             "location": data.issuer.location
                         },
-        "serverType": 'gws',        
+          
         "daysRemaining": data.daysRemaining,
         "validFrom": data.validFrom,
         "validTo": data.validTo,
