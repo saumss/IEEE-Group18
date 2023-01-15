@@ -68,7 +68,7 @@
                         <p class="rsc-q-txt">Host name is correctly listed in the certificate</p>
                     </div>
                     <div class="rsc-a">
-                        {#if valid == true}
+                        {#if valid != "NULL"}
                         <button class="rsc-button" id="rscb1">Yes</button>                        
                         {:else}
                         <button class="rsc-button" id="rscb2">No</button>                        
