@@ -6,8 +6,7 @@
         let companyName;
         let SANs;
         let issuerDetails;
-        let serverType;
-        let valid;
+        let valid = "";
         let daysRemaining;
         let serialNumber;
         let validFrom;
@@ -16,44 +15,19 @@
         let success = false;
         let response;
   async function submitForm()  {
-        // if(hostname == ''){
-        //   let element = document.querySelector('.error-message')
-        //   element.classList.remove('display-none')
-        //   success = false;
-        // }
-        // if(hostname != ''){
-        //   let element = document.querySelector('.error-message')
-        //   element.classList.add('display-none')
-        // }
         response = await fetch(`http://localhost:3000/?hostname=${hostname}`, {method: 'POST' })
         .catch(error =>console.log(error))
-            console.log(response.status)
             const data = await response.json();
             const resData = await data;
-            console.log(resData);
+            // console.log(resData);
             companyName = data.companyName;
-              SANs = data.SANs;
-      
-        issuerDetails = data.issuerDetails;
-        serverType = data.serverType;     
-        daysRemaining = data.daysRemaining;
-        validFrom = data.validFrom;
-        validTo = data.validTo;
-        valid = data.valid;
-        success = valid;
-        console.log(success)
-        // if(success == false){
-        //   companyName ='';
-        //   SANs = '';
-        //   issuerDetails = '';
-        //   serverType = '';
-        //   valid = '';
-        //   daysRemaining = '';
-        //   serialNumber = '';
-        //   validFrom = '';
-        //   validTo = '';
-        // }
-        // serialNumber = data.serialNumber;
+            SANs = data.SANs;
+            issuerDetails = data.issuerDetails;
+            daysRemaining = data.daysRemaining;
+            validFrom = new Date(data.validFrom).toDateString().slice(4);
+            validTo = new Date(data.validTo).toDateString().slice(4);
+            valid = data.valid;
+            success = valid;    
     };
 
 </script>
@@ -100,8 +74,11 @@
     
     <div><h1>...waiting</h1></div> 
     
-    {:then number} 
+    {:then Number} 
+
+    {#if valid }
     <Results {companyName} {issuerDetails} {daysRemaining} {serialNumber} {valid} {validFrom} {validTo}/>
+    {/if}
 
     {:catch error} <p style="color: red">
       {error.message}</p> 
@@ -123,24 +100,32 @@
                 "serialNumber": data.serialNumber -->
   
   <style>
-    :root {
-    --primary-btn-color: #0066FF;
-    --primary-txt-color: #000000;
+        :root {
+        --primary-btn-color: #0066FF;
+        --primary-txt-color: #000000;
+      
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+      }
   
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-  }
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
   
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 800px;
+        margin: 0 auto;
+      }
   
     /* utility classes */
     .btn-primary {
@@ -186,18 +171,10 @@
       -webkit-text-fill-color: transparent;
       -moz-text-fill-color: transparent;
     }
-  
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-  
+
     /* Search box */
     .search-box {
       padding: 1rem 1rem;
-      width: 60%;
       background: #ffffff;
       border: 1px solid #0066ff;
       border-radius: 8px;
@@ -278,7 +255,4 @@
       margin-left: 1.3rem;
     }
 
-    /* .display-none{
-      display: none;
-    } */
   </style>

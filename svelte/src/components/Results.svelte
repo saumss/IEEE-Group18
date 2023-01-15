@@ -5,12 +5,12 @@
         'issuer' : "DigiCert",
         'location': "london"
     };
-    // export let success = false;
+    // export let hostname = '';
     export let serverType = "gws";
     export let daysRemaining = '30';
     export let validFrom = "";
     export let validTo = "";
-    export let valid = "";
+    export let valid = '';
     export let serialNumber = '39399w09w0s030920';
     // success = valid;
 </script>
@@ -39,15 +39,15 @@
                         <p>{companyName}</p>
                     </div>
                 </div>
-                <div class="rpt-sum-cont" id="rsc-2">
+                <!-- <div class="rpt-sum-cont" id="rsc-2">
                     <div class="rsc-q">
                         <p class="rsc-q-txt">IP Address</p>
                     </div>
                     <div class="rsc-a">
                         <p>13.107.42.14</p>
                     </div>
-                </div>
-                <div class="rpt-sum-cont" id="rsc-3">
+                </div> -->
+                <div class="rpt-sum-cont" id="rsc-2">
                     <div class="rsc-q">
                         <p class="rsc-q-txt">Certificate issued by</p>
                     </div>
@@ -55,7 +55,7 @@
                         <p>{issuerDetails.issuer}</p>
                     </div>
                 </div>
-                <div class="rpt-sum-cont" id="rsc-4">
+                <div class="rpt-sum-cont" id="rsc-3">
                     <div class="rsc-q">
                         <p class="rsc-q-txt">Certificate expires in</p>
                     </div>
@@ -63,12 +63,12 @@
                         <p>{daysRemaining} Days</p>
                     </div>
                 </div>
-                <div class="rpt-sum-cont" id="rsc-5">
+                <div class="rpt-sum-cont" id="rsc-4">
                     <div class="rsc-q">
                         <p class="rsc-q-txt">Host name is correctly listed in the certificate</p>
                     </div>
                     <div class="rsc-a">
-                        {#if valid != "NULL"}
+                        {#if valid != 'NULL'}
                         <button class="rsc-button" id="rscb1">Yes</button>                        
                         {:else}
                         <button class="rsc-button" id="rscb2">No</button>                        
@@ -85,7 +85,7 @@
                 <div class="ri">
                     <p>Common name: {companyName}</p> 
                     <p>Location: {issuerDetails.location}</p>
-                    <p>Valid from {validFrom} to {validTo}</p> 
+                    <p>Valid: from {validFrom} to {validTo}</p> 
                     <p>Serial Number: {serialNumber} </p>
                     <p>Issuer: {issuerDetails.issuer} </p>
                     <p>server Type: {serverType} </p>
@@ -109,7 +109,7 @@
         </div>
     </div>
     {:else}
-    <p>Wrong information provided</p>
+    <p class="error-message">Invalid or empty hostname</p>
     {/if}
 
 </main>
@@ -135,7 +135,7 @@
     .rpt-summary {
         border: 2px solid #0066ff;
         border-radius: 8px;
-        margin: 40px 0px;
+        margin: 0;
         /* background-color: #ffffff; */
         background: rgba(255, 255, 255, 0.63);
         border-radius: 16px;
@@ -217,7 +217,6 @@
     }
 
     .result-items {
-        margin: 80px 0px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -228,7 +227,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        flex: 1;
+        width: 100%;
     }
 
     .ri-im {
@@ -249,8 +248,11 @@
         font-size: 14px;
         flex: 1;
     }
-
     
+    .ri p{
+        margin: 5px 0;
+    }
+
 
     
 
