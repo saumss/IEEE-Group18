@@ -6,12 +6,6 @@
 <main id="main-page">
   <Header/>
   <SearchBox/>
-  <!-- <Results/> -->
-
-
 </main>
 
-<style>
-
-</style>
 
