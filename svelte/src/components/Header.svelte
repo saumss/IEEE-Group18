@@ -3,14 +3,14 @@
 
 <main>
     <div class="headerbox">
-        <h1 class="heading">SSL <span class="linear-grad-blue">Shoper</span></h1>
-        <div class="container"> 
+        <h1 class="heading">SSL <span class="linear-grad-blue">Shopper</span></h1>
+        <!--<div class="container"> 
         <a href="www.xyz.com" class="link"><span class="menu-item ">SSL Wizard</span></a>
         <a href="www.xyz.com" class="link"><span class="menu-item ">Cheap SSL Certificates</span></a>
         <a href="www.xyz.com" class="link"><span class="menu-item ">Code Signing Certificates</span></a>
         <a href="www.xyz.com" class="link"><span class="menu-item ">Wild Card Certificates</span></a>
-        <button class="btn-primary">SSL Tools</button>
         </div>
+        <button class="btn-primary">SSL Tools</button>-->
     </div>
 </main>
 
@@ -34,8 +34,8 @@
         width: 100%;
         background: #FFFFFF;
         padding: 1rem 1rem;
-        display: flex;
-        justify-content: space-around;        
+        display: flex;       
+        justify-content: space-around;
         align-items: center;
 
        /* From https://css.glass */
@@ -109,6 +109,7 @@
 
     .btn-primary {
       display: flex;
+      float: right;
       flex-direction: row;
       justify-content: center;
       align-items: center;
@@ -124,5 +125,18 @@
       color: #0066ff;
       background: transparent;
       cursor: pointer;
+    }
+    @media only screen and (min-width: 375px) and (max-width: 812px) {
+      .headerbox,.container{    
+        width:100%;
+      }
+    }
+    @media only screen and (max-width:500px){
+      .heading{
+        font-size: 1.2rem;
+      }
+      .link{
+        font-size: 0.6rem;
+      }
     }
 </style>

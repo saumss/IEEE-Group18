@@ -107,7 +107,7 @@
         </div>
     </div>
     {:else}
-    <p class="error-message">Invalid or empty hostname</p>
+    <h3 class="error-message">Invalid or empty hostname</h3>
     {/if}
 
 </main>
@@ -250,10 +250,24 @@
     .ri p{
         margin: 5px 0;
     }
+    .error-message{
+        color: #F04438;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 812px) {
+      .rpt-summary{    
+        margin: auto;
+        width: 60%;
+      }
+      .result-items{
+        margin: auto;
+        width: 60%;
+      }
+    }
+    @media only screen and (max-width: 500px){
+        .ri{
+            font-size: 8.4px;
+        }
+    }
 
-
-    
-
-    
 
 </style>

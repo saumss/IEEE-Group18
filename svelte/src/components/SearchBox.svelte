@@ -256,5 +256,13 @@
       font-size: 10px;
       margin-left: 1.3rem;
     }
-
+    @media only screen and (min-width: 375px) and (max-width: 812px) {
+      .container{    
+        width: 80%;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+    }
   </style>
