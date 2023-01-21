@@ -1,0 +1,27 @@
+{
+  "name": "ssl-checker",
+  "version": "1.0.0",
+  "description": "This template should help get you started developing with Svelte in Vite.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "client": "npm run dev --prefix svelte",
+    "server": "nodemon server.js --ignore '/svelte' "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saumss/IEEE-Group18.git"
+  },
+  "author": "Lucky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saumss/IEEE-Group18/issues"
+  },
+  "homepage": "https://github.com/saumss/IEEE-Group18#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "ssl-verifier": "^1.0.0"
+  }
+}
