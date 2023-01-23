@@ -4,7 +4,7 @@
     issuer: "DigiCert",
     location: "london",
   };
-  export let serverType = "gws";
+  export let misspelled;
   export let daysRemaining = "30";
   export let validFrom = "";
   export let validTo = "";
@@ -60,10 +60,13 @@
               </p>
             </div>
             <div class="rsc-a">
-              {#if valid != "NULL"}
+              {#if valid}
                 <button class="rsc-button" id="rscb1">Yes</button>
+              {:else if misspelled == true}
+                <span class="error-message">May be misspelled hostname</span>
               {:else}
-                <button class="rsc-button" id="rscb2">No</button>
+                <span class="error-message">SSL Certificate is not installed</span>
+                <!-- <button class="rsc-button" id="rscb2">No</button> -->
               {/if}
             </div>
           </div>
@@ -83,7 +86,6 @@
             <p>Valid: from {validFrom} to {validTo}</p>
             <p>Serial Number: {serialNumber}</p>
             <p>Issuer: {issuerDetails.issuer}</p>
-            <p>server Type: {serverType}</p>
           </div>
         </div>
       </div>
@@ -193,12 +195,6 @@
     background-color: #12b76a;
   }
 
-  #rscb2 {
-    color: #ffffff;
-    background-color: #f04438;
-    border: 1px solid #f04438;
-  }
-
   .result-items {
     display: flex;
     flex-direction: column;
@@ -221,7 +217,7 @@
   }
 
   .ri {
-    font-size: 1.1rem;
+    font-size: 15px;
     flex: 1;
   }
 
@@ -263,7 +259,7 @@
       width: 60%;
     }
 
-    .ri {
+    .ri p{
       font-size: 1rem;
     }
   }
@@ -278,4 +274,5 @@
       flex-direction: column;
     }
   }
+
 </style>

@@ -4,7 +4,6 @@
 
   let hostname = "";
   let companyName;
-  let SANs;
   let issuerDetails;
   let valid = "";
   let daysRemaining;
@@ -12,23 +11,36 @@
   let validFrom;
   let validTo;
 
-  let success = false;
+  let misspelled = true;
   let response;
+
   async function submitForm() {
     response = await fetch(`http://localhost:3000/?hostname=${hostname}`, {
       method: "POST",
     }).catch((error) => console.log(error));
-    const data = await response.json();
-    const resData = await data;
-    // console.log(resData);
-    companyName = data.companyName;
-    SANs = data.SANs;
-    issuerDetails = data.issuerDetails;
-    daysRemaining = data.daysRemaining;
-    validFrom = new Date(data.validFrom).toDateString().slice(4);
-    validTo = new Date(data.validTo).toDateString().slice(4);
-    valid = data.valid;
-    success = valid;
+    if (response) {
+      const data = await response.json();
+      const resData = await data;
+      // console.log(resData);
+
+      // assign values to declared variables
+      companyName = data.companyName;
+      issuerDetails = data.issuerDetails;
+      daysRemaining = data.daysRemaining;
+      validFrom = new Date(data.validFrom).toDateString().slice(4);
+      validTo = new Date(data.validTo).toDateString().slice(4);
+      valid = data.valid;
+
+      if (companyName != "NULL") {
+        let para = companyName;
+        para = para.replace(".*", "");
+        para = para.toLowerCase();
+        let str = hostname.toLowerCase();
+
+        // check if hostname is misspelled
+        misspelled = !(para.includes(str) || str.includes(para));
+      }
+    }
   }
 </script>
 
@@ -71,7 +83,7 @@
           </div>
         </form>
         <div class="span-container">
-          <span class="input-hint-span">Enter URL of website</span>
+          <span class="input-hint-span">Enter Hostname of website</span>
         </div>
       </div>
     </div>
@@ -80,7 +92,7 @@
   {#await response}
     <div><h1>...waiting</h1></div>
   {:then Number}
-    {#if valid}
+    {#if response}
       <Results
         {companyName}
         {issuerDetails}
@@ -89,7 +101,11 @@
         {valid}
         {validFrom}
         {validTo}
+        {misspelled}
       />
+    {/if}
+    {#if hostname == ""}
+      <p style="text-align:center">Please enter hostname</p>
     {/if}
   {:catch error}
     <p style="color: red">
@@ -325,4 +341,5 @@
       width: 50%;
     }
   }
+  
 </style>

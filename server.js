@@ -7,7 +7,7 @@ app.use(cors({ origin: true }));
 const port = 3000;
 
 app.get("/", (req, res) => {
-  res.send("we will get back to you shortly");
+  res.send("Thankyou for your request, we will get back to you shortly");
 });
 
 app.post("/", (req, res) => {
@@ -15,16 +15,14 @@ app.post("/", (req, res) => {
   sslChecker
     .Info(`https://${query}`, { port: 443, method: "GET" })
     .then((data) => {
-      console.log(data.issuerDetails);
+
       res.send({
         companyName: data.subject.commonName,
-        SANs: data.subjectAlternativeName,
         issuerDetails: {
           issuer: data.issuer.commonName,
           organization: data.issuer.organization,
           location: data.issuer.location,
         },
-        serverType: "gws",
         daysRemaining: data.daysRemaining,
         validFrom: data.validFrom,
         validTo: data.validTo,
@@ -54,3 +52,5 @@ app.post("/", (req, res) => {
 app.listen(port, () => {
   console.log("server started at port : " + port);
 });
+
+
