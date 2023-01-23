@@ -1,3 +1,21 @@
+# SSL Checker
+
+This web app gives information about SSL-Certificate of a website is installed or not.
+
+To run this app in local system follow these steps:
+
+1. Clone this repository to your local machine. 
+2. run this command: npm install 
+   this command will install all the dependencies required to run the server.
+3. Then cd inside svelte folder. 
+4. run this command: npm install
+5. Now open two terminals, one is for running the server and other is for client. 
+6. In one terminal: cd inside root directory and run: npm run server 
+7. In another terminal cd inside svelte folder and run: npm run dev
+
+It will start the app running in localhost:3000. Open this in your browser and try this tool.
+
+
 # Svelte + Vite
 
 This template should help get you started developing with Svelte in Vite.
