@@ -65,9 +65,7 @@
               {:else if misspelled == true}
                 <span class="error-message">May be misspelled hostname</span>
               {:else}
-                <span class="error-message"
-                  >SSL Certificate is not installed</span
-                >
+                <span class="error-message">SSL Certificate is not installed</span>
                 <!-- <button class="rsc-button" id="rscb2">No</button> -->
               {/if}
             </div>
