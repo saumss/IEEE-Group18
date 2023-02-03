@@ -1,34 +1,147 @@
 # SSL Checker
 
-This web app gives information about SSL-Certificate of a website is installed or not.
+## Demo
 
-To run this app in local system follow these steps:
+![ssl-cheker](./public/ssldemo.gif)
 
-1. Clone this repository to your local machine. 
-2. run this command: npm install 
-   this command will install all the dependencies required to run the server.
-3. Then cd inside svelte folder. 
-4. run this command: npm install
-5. Now open two terminals, one is for running the server and other is for client. 
-6. In one terminal: cd inside root directory and run: npm run server 
-7. In another terminal cd inside svelte folder and run: npm run dev
+## Table of contents
 
-It will start the app running in localhost:3000. Open this in your browser and try this tool.
+- Prerequisites
+- Project Overview
+- Getting Started
+  - Installation guide
+  - How to run this project on your local system
+  - Demo to run scripts
+- Further development and contribution 
+- Aknowledgements and Useful resources
+
+## Prerequisites
+Hi😃, this app uses Svelte, Node.Js, Express. You should know the basics to start with this small project. Even if you are a beginner don't go anywhere, we are here to help you how to run this app on your device.
+
+## Project Overview
+This web app gives information about SSL-Certificate of a website. It is extremely useful tool for developers who want to check if their website has ssl-certificate installed correctly or not. 
+
+**Fetching the data**: To fetch ssl-certificate information of any hostname, we use ssl-verifier npm package. 
+
+**Node and Express**: To handle post request from user and return the results/data. 
+
+**Svelte**: To display the results, we use conditional rendering in Svelte.  
 
 
-# Svelte + Vite
-
-This template should help get you started developing with Svelte in Vite.
+## Getting Started
+### Installation
+Before getting started <br>
+download [git](https://git-scm.com/download/) <br>
+download [node](https://nodejs.org/en/download/) (LTS version)<br>
+Skip this part if already installed these <br><br>
 
 ## Recommended IDE Setup
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
+[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). 
 
-## Need an official Svelte framework?
+After installation configure git by your user name and email.
+```powershell
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
 
+// check configuration
+$ git config user.name 
+John Doe
+$ git config user.email 
+johndoe@example.com
+
+```
+
+## Run this project on your local machine 
+## Cloning the Project 
+Hope you have already setup your git. Select any folder and open with git bash, in which you will have the cloned project.
+
+Now run following commands.
+```powershell
+$ git clone https://github.com/saumss/IEEE-Group18.git
+# you will se these messeges
+# remote: Enumerating objects: 6, done.
+# remote: Counting objects: 100% (6/6), done.
+# remote: Compressing objects: 100% (3/3), done.
+# remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+# Receiving objects: 100% (6/6), done.
+```
+
+## Running the server
+After clonning you need to go inside IEEE-Group18 folder. This is root directory of this project and make sure you are in main branch. 
+
+Now install all the dependencies to run our server. <br>
+Firstly install dependencies used by server in root directory. 
+
+Follow these commands
+```powershell
+$/IEEE-Group18(main) npm install
+# added 88 packages, and audited 89 packages in 25s
+# 14 packages are looking for funding
+# found 0 vulnerabilities
+
+$/IEEE-Group18(main) npm install nodemon
+# added 32 packages, and audited 121 packages in 8s
+# 17 packages are looking for funding
+#   run `npm fund` for details
+# found 0 vulnerabilities
+
+$/IEEE-Group18(main) npm run server
+# > ssl-checker@1.0.0 server
+# > nodemon server.js --ignore '/svelte'
+# [nodemon] 2.0.20
+# [nodemon] to restart at any time, enter `rs`
+# [nodemon] watching path(s): *.*
+# [nodemon] watching extensions: js,mjs,json
+# [nodemon] starting `node server.js`
+# server started at port : 3000 
+
+Now the server is running and live at your local host at port 3000. 
+```
+
+## Running the app
+To run the app go inside svelte folder. <br>
+Run these commands<br>
+```powershell
+# to go inside svelte folder run 
+$/IEEE-Group18(main) cd .\svelte\
+$/IEEE-Group18/svelte(main) 
+
+
+// now you are inside svelte
+follow these commands
+
+$/IEEE-Group18/svelte(main) npm install
+# added 24 packages, and audited 25 packages in 4s
+# 4 packages are looking for funding
+#   run `npm fund` for details
+# found 0 vulnerabilities
+
+$/IEEE-Group18/svelte(main) npm run dev 
+
+# > svelte@0.0.0 dev
+# > vite
+
+# Forced re-optimization of dependencies
+
+#   VITE v4.0.4  ready in 664 ms
+
+#   ➜  Local:   http://127.0.0.1:5173/
+#   ➜  Network: use --host to expose
+
+you will see these messages when your app starts. Paste this link to your browser to open the website. 
+```
+
+## Further Development and Contribution Guidelines
+
+## Acknowledgements and Useful Resources
+
+## Svelte Specific Resources
+
+### Need an official Svelte framework?
 Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
 
-## Technical considerations
+### Technical considerations
 
 **Why use this over SvelteKit?**
 
