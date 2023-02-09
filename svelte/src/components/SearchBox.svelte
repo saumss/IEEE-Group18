@@ -258,6 +258,7 @@
     font-size: 14px;
     padding: 8px 14px;
     flex: 1;
+    background: transparent;
   }
 
   input:-webkit-autofill,
