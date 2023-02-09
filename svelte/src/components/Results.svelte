@@ -50,7 +50,11 @@
               <p class="rsc-q-txt">Certificate expires in</p>
             </div>
             <div class="rsc-a">
+              {#if valid}
               <p>{daysRemaining} Days</p>
+              {:else}
+              <p>Not Applicable</p>
+              {/if}
             </div>
           </div>
           <div class="rpt-sum-cont" id="rsc-4">
@@ -83,7 +87,11 @@
           <div class="ri">
             <p>Common name: {companyName}</p>
             <p>Location: {issuerDetails.location}</p>
+            {#if valid}
             <p>Valid: from {validFrom} to {validTo}</p>
+            {:else}
+            <p>Valid: Not Applicable</p>
+            {/if}
             <p>Serial Number: {serialNumber}</p>
             <p>Issuer: {issuerDetails.issuer}</p>
           </div>
