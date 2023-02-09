@@ -2,7 +2,7 @@
 
 ## Demo
 
-![ssl-cheker](./ssldemo.gif)
+![ssl-cheker](/ssldemo.gif)
 
 ## Table of contents
 
