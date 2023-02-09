@@ -1,5 +1,5 @@
 # SSL Checker
-Visit the [live](https://sslchecker.netlify.app/) website. 
+A utility tool to check information about the ssl-certificates of websites hosted in internet. The website is now [live](https://sslchecker.netlify.app/). 
 
 ## Demo
 ![img](/svelte/public/ssldemo.gif)
