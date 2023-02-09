@@ -1,8 +1,8 @@
 # SSL Checker
+Visit the [live]("https://sslchecker.netlify.app/") website. 
 
 ## Demo
-
-![ssl-cheker](/ssldemo.gif)
+![img](/svelte/public/ssldemo.gif)
 
 ## Table of contents
 
